@@ -22,3 +22,6 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "tmux/tmux-themepack"]
+	path = tmux/tmux-themepack
+	url = https://github.com/jimeh/tmux-themepack.git
