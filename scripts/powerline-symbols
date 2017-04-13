@@ -1,0 +1,20 @@
+# install powerline symbols
+# need to be root
+
+# Download the latest version of the symbol font and fontconfig file
+wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+
+# Move the symbol font to a valid X font path. Valid font paths can
+# be listed with xset q:
+[ -d ~/.fonts ] || mkdir ~/.fonts
+mv PowerlineSymbols.otf ~/.fonts/
+
+# Update font cache for the path the font was moved to
+fc-cache -vf ~/.fonts/
+
+# Install the fontconfig file. For newer versions of fontconfig
+# the config path is ~/.config/fontconfig/conf.d/, for older versions
+# it’s ~/.fonts.conf.d/
+[ -d ~/.config/fontconfig/conf.d ] || mkdir -p ~/.config/fontconfig/conf.d
+mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/

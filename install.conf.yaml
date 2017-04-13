@@ -13,3 +13,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  -
+    description: "Installing powerline symbols"
+    command: "./scripts/powerline-symbols"
+    stderr: true
