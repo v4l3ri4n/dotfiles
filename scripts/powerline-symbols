@@ -2,8 +2,8 @@
 # need to be root
 
 # Download the latest version of the symbol font and fontconfig file
-wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+wget --no-check-certificate https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+wget --no-check-certificate https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
 
 # Move the symbol font to a valid X font path. Valid font paths can
 # be listed with xset q:
