@@ -28,3 +28,9 @@
 [submodule "vim/bundle/vim-json"]
 	path = vim/bundle/vim-json
 	url = https://github.com/elzr/vim-json
+[submodule "vim/bundle/phpcomplete.vim"]
+	path = vim/bundle/phpcomplete.vim
+	url = git://github.com/shawncplus/phpcomplete.vim.git
+[submodule "vim/bundle/php.vim"]
+	path = vim/bundle/php.vim
+	url = https://github.com/StanAngeloff/php.vim.git
