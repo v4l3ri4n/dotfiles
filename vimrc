@@ -36,6 +36,8 @@ set hidden
 " Enable syntax color
 syntax enable
 
+set term=screen-256color  " enable colors on term and to be sync with tmux conf
+
 " Enable Solarized theme with dark background
 let g:solarized_termcolors = 256
 set background=dark
