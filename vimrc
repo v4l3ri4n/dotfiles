@@ -70,9 +70,13 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+" Faster scrolling
+nnoremap <C-j> 3j
+nnoremap <C-k> 3k
+
 " Remap escape key
-imap ;; <Esc>
-map ;; <Esc>
+imap ,, <Esc>
+map ,, <Esc>
 
 "
 " Plugins configuration
