@@ -1,41 +1,43 @@
 " VIM Configuration
 
-" Cancel Vi compatibility
-set nocompatible
+" auto reload the config file after modifications
+autocmd BufWrite $MYVIMRC source $MYVIMRC
 
-" Activate pathogen
-call pathogen#infect()
+" -----------------------------------------------------------
+" General
+" -----------------------------------------------------------
 
-" Activate NERDTree on start
-autocmd vimenter * NERDTree
+set nocompatible            " Cancel Vi compatibility
+call pathogen#infect()      " Activate pathogen
+autocmd vimenter * NERDTree " Activate NERDTree on start
 
-" Display
-set title                 " Enable title update
-set number                " Show line numbers
-set ruler                 " Show the position of the cursor
-set wrap                  " Wrap lines
+let mapleader=","              " use comma as leader
+set backspace=indent,eol,start " Activate normal behaviour of backspace key
+set hidden                     " A buffer becomes hidden when it's unloaded
 
-set scrolloff=3           " Scroll offset around cursor
+" Beep
+set visualbell            " Stop beeping
+set noerrorbells          " Stop beeping
 
 " Search
 set ignorecase            " Ignore case in search patterns
 set smartcase             " If a search pattern contains a uppercase, activate case sensitivity
 set incsearch             " While typing the pattern, highlight matches
 set hlsearch              " Highlight search matches
+nnoremap <leader><space> :noh<CR> " Turn off search highlight
 
-" Beep
-set visualbell            " Stop beeping
-set noerrorbells          " Stop beeping
+" -----------------------------------------------------------
+" Colors & Display
+" -----------------------------------------------------------
 
-" Activate normal behaviour of backspace key
-set backspace=indent,eol,start
+" Display
+set title                 " Enable title update
+set number                " Show line numbers
+set ruler                 " Show the position of the cursor
+set wrap                  " Wrap lines
+set scrolloff=3           " Scroll offset around cursor
 
-" A buffer becomes hidden when it's unloaded
-set hidden
-
-" Enable syntax color
-syntax enable
-
+syntax enable             " Enable syntax color
 set term=screen-256color  " enable colors on term and to be sync with tmux conf
 
 " Enable Solarized theme with dark background
@@ -50,6 +52,10 @@ set antialias
 set cursorline
 set cursorcolumn
 
+" -----------------------------------------------------------
+" Code syntax
+" -----------------------------------------------------------
+
 " Detect filetype and enable specific behaviours
 filetype on
 filetype plugin on
@@ -59,6 +65,13 @@ filetype indent on
 set expandtab           " Insert spaces when tab is pressed
 set tabstop=4           " number of spaces for a TAB
 set shiftwidth=4        " number of spaces for indent
+
+" Remove trailing whitespaces and ^M chars
+autocmd FileType php,js,css,html,xml,yaml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+
+" -----------------------------------------------------------
+" Navigation
+" -----------------------------------------------------------
 
 " Disable arrow keys
 map <up> <nop>
@@ -78,14 +91,14 @@ nnoremap <C-k> 3k
 imap ,, <Esc>
 map ,, <Esc>
 
-"
+" -----------------------------------------------------------
 " Plugins configuration
-"
+" -----------------------------------------------------------
 
-" -- ack.vim
+" ack.vim
 let g:ack_default_options = " -H --nocolor --nogroup --column" " ensure compatibility with ack-grep 1.9
 
-" -- php.vim
+" php.vim
 " This must be put at the end of vimrc
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
