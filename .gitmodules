@@ -34,3 +34,6 @@
 [submodule "vim/bundle/php.vim"]
 	path = vim/bundle/php.vim
 	url = https://github.com/StanAngeloff/php.vim.git
+[submodule "vim/bundle/vim_bclose"]
+	path = vim/bundle/vim_bclose
+	url = https://github.com/ldong/vim_bclose
