@@ -1,5 +1,4 @@
 # install powerline symbols
-# need to be root
 
 # Download the latest version of the symbol font and fontconfig file
 wget --no-check-certificate https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
