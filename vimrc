@@ -72,8 +72,8 @@ set shiftwidth=4        " number of spaces for indent
 " Remove trailing whitespaces and ^M chars
 autocmd FileType php,js,css,html,xml,yaml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
-" Do not auto insert comment chars on newline
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" Do not auto insert comment chars on newline in insert mode when ENTER
+autocmd FileType * setlocal formatoptions-=r
 
 " -----------------------------------------------------------
 " Navigation
