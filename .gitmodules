@@ -37,3 +37,6 @@
 [submodule "vim/bundle/vim_bclose"]
 	path = vim/bundle/vim_bclose
 	url = https://github.com/ldong/vim_bclose
+[submodule "vim/bundle/auto-pairs-gentle"]
+	path = vim/bundle/auto-pairs-gentle
+	url = https://github.com/vim-scripts/auto-pairs-gentle
