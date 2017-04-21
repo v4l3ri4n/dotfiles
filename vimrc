@@ -1,8 +1,5 @@
 " VIM Configuration
 
-" auto reload the config file after modifications
-autocmd BufWrite $MYVIMRC source $MYVIMRC
-
 " -----------------------------------------------------------
 " General
 " -----------------------------------------------------------
@@ -25,6 +22,12 @@ set smartcase             " If a search pattern contains a uppercase, activate c
 set incsearch             " While typing the pattern, highlight matches
 set hlsearch              " Highlight search matches
 nnoremap <leader><space> :noh<CR> " Turn off search highlight
+
+" auto reload the config file after modifications
+autocmd BufWrite $MYVIMRC source $MYVIMRC
+
+:nnoremap <leader>ev :vsplit $MYVIMRC<cr> " edit vimrc mapping
+:nnoremap <leader>sv :source $MYVIMRC<cr> " reload vimrc mapping
 
 " -----------------------------------------------------------
 " Colors & Display
@@ -69,6 +72,9 @@ set shiftwidth=4        " number of spaces for indent
 " Remove trailing whitespaces and ^M chars
 autocmd FileType php,js,css,html,xml,yaml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
+" Do not auto insert comment chars on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " -----------------------------------------------------------
 " Navigation
 " -----------------------------------------------------------
@@ -84,8 +90,10 @@ imap <left> <nop>
 imap <right> <nop>
 
 " Faster scrolling
+nnoremap <C-h> 3h
 nnoremap <C-j> 3j
 nnoremap <C-k> 3k
+nnoremap <C-l> 3l
 
 " Remap escape key
 imap ,, <Esc>
