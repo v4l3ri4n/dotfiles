@@ -9,8 +9,12 @@ call pathogen#infect()      " Activate pathogen
 autocmd vimenter * NERDTree " Activate NERDTree on start
 
 let mapleader=","              " use comma as leader
+set timeoutlen=500             " lower timeout for leader key
+
 set backspace=indent,eol,start " Activate normal behaviour of backspace key
 set hidden                     " A buffer becomes hidden when it's unloaded
+set autoread                   " Reload files changed outside vim"
+set history=1000               " Store lots of :cmdline history
 
 " Beep
 set visualbell            " Stop beeping
@@ -28,6 +32,19 @@ autocmd BufWrite $MYVIMRC source $MYVIMRC
 
 :nnoremap <leader>ev :vsplit $MYVIMRC<cr> " edit vimrc mapping
 :nnoremap <leader>sv :source $MYVIMRC<cr> " reload vimrc mapping
+
+" -----------------------------------------------------------
+" Swap files & backups & undo
+" -----------------------------------------------------------
+
+set noswapfile            " Swap file contains undo/redo history and more
+"set nobackup             " Backup is a file containg content before file is edited
+"set nowritebackup        " changes the default save behavior of Vim (writes buffer directly to file)
+
+" Keep undo history across sessions, by storing in file.
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
 
 " -----------------------------------------------------------
 " Colors & Display
@@ -73,7 +90,7 @@ set shiftwidth=4        " number of spaces for indent
 autocmd FileType php,js,css,html,xml,yaml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " Do not auto insert comment chars on newline in insert mode when ENTER
-autocmd FileType * setlocal formatoptions-=r
+"autocmd FileType * setlocal formatoptions-=r
 
 " -----------------------------------------------------------
 " Navigation
