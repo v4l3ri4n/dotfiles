@@ -123,6 +123,10 @@ map ,, <Esc>
 " ack.vim
 let g:ack_default_options = " -H --nocolor --nogroup --column" " ensure compatibility with ack-grep 1.9
 
+" PHP-Indenting-for-VIm
+:let g:PHP_removeCRwhenUnix = 1             "automatically remove '\r' characters when the 'fileformat' is set to Unix
+:let g:PHP_vintage_case_default_indent = 1  " indent 'case:' and 'default:' statements in switch() blocks
+
 " php.vim
 " This must be put at the end of vimrc
 function! PhpSyntaxOverride()
