@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# install vim dependencies
+
+sudo apt-get install ack-grep

@@ -17,3 +17,9 @@
     description: "Installing powerline symbols"
     command: "./scripts/powerline-symbols"
     stderr: true
+  -
+    description: "Installing vim dependencies"
+    command: "./scripts/vim-dependencies"
+    stderr: true
+    stdin: true
+    stdout: true

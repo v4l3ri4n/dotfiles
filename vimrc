@@ -45,6 +45,7 @@ set noswapfile            " Swap file contains undo/redo history and more
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
+set undolevels=1000
 
 " -----------------------------------------------------------
 " Colors & Display
@@ -138,4 +139,11 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+" Syntastic
+let g:syntastic_check_on_wq = 0   " skip check on :wq
+let g:syntastic_error_symbol = "\u1F7AD"             " 🞭
+let g:syntastic_style_error_symbol = "\u1F7B3"       " 🞳
+let g:syntastic_warning_symbol = "\u1F78A"           " 🞊
+let g:syntastic_style_warning_symbol = "\u1F787"     " 🞇
 
