@@ -112,6 +112,10 @@ nnoremap <C-h> 3h
 nnoremap <C-j> 3j
 nnoremap <C-k> 3k
 nnoremap <C-l> 3l
+vnoremap <C-h> 3h
+vnoremap <C-j> 3j
+vnoremap <C-k> 3k
+vnoremap <C-l> 3l
 
 " Remap escape key
 imap ,, <Esc>
@@ -141,6 +145,7 @@ augroup phpSyntaxOverride
 augroup END
 
 " Syntastic
+let g:syntastic_check_on_open = 1 " syntastic will run syntax checks when buffers are first loaded and saved
 let g:syntastic_check_on_wq = 0   " skip check on :wq
 let g:syntastic_error_symbol = "\u1F7AD"             " 🞭
 let g:syntastic_style_error_symbol = "\u1F7B3"       " 🞳
