@@ -152,3 +152,7 @@ let g:syntastic_style_error_symbol = "\u1F7B3"       " 🞳
 let g:syntastic_warning_symbol = "\u1F78A"           " 🞊
 let g:syntastic_style_warning_symbol = "\u1F787"     " 🞇
 
+let g:syntastic_php_checkers = ["php", "phpcs", "phpmd"]
+let g:syntastic_php_phpcs_exec = "~/dotfiles/bin/phpcs"
+let g:syntastic_php_phpcs_args = "--standard=PSR2"
+
