@@ -1,39 +1,47 @@
 #!/bin/bash
 
-# Recommended extra packages for Trusty 14.04
-#sudo apt-get update
-#sudo apt-get install \
-#    linux-image-extra-$(uname -r) \
-#    linux-image-extra-virtual
+read -p "Do you wish to install docker and related Docker images (y/n)?" answer
 
-# Install using the repository
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
+case $yn in
+    y|Y )
+        # Recommended extra packages for Trusty 14.04
+        #sudo apt-get update
+        #sudo apt-get install \
+        #    linux-image-extra-$(uname -r) \
+        #    linux-image-extra-virtual
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        # Install using the repository
+        sudo apt-get install \
+            apt-transport-https \
+            ca-certificates \
+            curl \
+            software-properties-common
 
-sudo apt-key fingerprint 0EBFCD88
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+        sudo apt-key fingerprint 0EBFCD88
 
-sudo apt-get update
+        sudo add-apt-repository \
+           "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+           $(lsb_release -cs) \
+           stable"
 
-sudo apt-get install docker-ce
+        sudo apt-get update
 
-# run docker without sudo
-sudo groupadd docker
-sudo usermod -aG docker $USER
-sudo service docker restart
+        sudo apt-get install docker-ce
 
-#print version
-docker version
+        # run docker without sudo
+        sudo groupadd docker
+        sudo usermod -aG docker $USER
+        sudo service docker restart
 
-# install php tools based on php 5.6
-docker pull jolicode/phaudit
+        #print version
+        docker version
 
+        # install php tools based on php 5.6
+        docker pull jolicode/phaudit
+    ;;
+    * )
+        echo "Docker not installed"
+    ;;
+esac
