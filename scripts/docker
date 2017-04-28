@@ -2,7 +2,7 @@
 
 read -p "Do you wish to install docker and related Docker images (y/n)?" answer
 
-case $yn in
+case $answer in
     y|Y )
         # Recommended extra packages for Trusty 14.04
         #sudo apt-get update
@@ -39,7 +39,8 @@ case $yn in
         docker version
 
         # install php tools based on php 5.6
-        docker pull jolicode/phaudit
+        pwd
+        docker build -f docker/php56-tools/Dockerfile -t php56-tools .
     ;;
     * )
         echo "Docker not installed"

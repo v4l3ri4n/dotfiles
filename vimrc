@@ -135,14 +135,16 @@ let g:ack_default_options = " -H --nocolor --nogroup --column" " ensure compatib
 " Syntastic
 let g:syntastic_check_on_open = 1 " syntastic will run syntax checks when buffers are first loaded and saved
 let g:syntastic_check_on_wq = 0   " skip check on :wq
-let g:syntastic_error_symbol = "\u1F7AD"             " 🞭
-let g:syntastic_style_error_symbol = "\u1F7B3"       " 🞳
-let g:syntastic_warning_symbol = "\u1F78A"           " 🞊
-let g:syntastic_style_warning_symbol = "\u1F787"     " 🞇
+let g:syntastic_error_symbol = "🞭"
+let g:syntastic_warning_symbol = "🞳"
+let g:syntastic_style_error_symbol = "🞇"
+let g:syntastic_style_warning_symbol = "🞊"
 
 let g:syntastic_php_checkers = ["php", "phpcs", "phpmd"]
+let g:syntastic_php_php_exec = "~/dotfiles/bin/php"
 let g:syntastic_php_phpcs_exec = "~/dotfiles/bin/phpcs"
 let g:syntastic_php_phpcs_args = "--standard=PSR2"
+"let g:syntastic_php_phpmd_exec = "~/dotfiles/bin/phpmd"
 
 " php.vim
 " This must be put at the end of vimrc
