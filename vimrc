@@ -144,7 +144,7 @@ let g:syntastic_php_checkers = ["php", "phpcs", "phpmd"]
 let g:syntastic_php_php_exec = "~/dotfiles/bin/php"
 let g:syntastic_php_phpcs_exec = "~/dotfiles/bin/phpcs"
 let g:syntastic_php_phpcs_args = "--standard=PSR2"
-"let g:syntastic_php_phpmd_exec = "~/dotfiles/bin/phpmd"
+let g:syntastic_php_phpmd_exec = "~/dotfiles/bin/phpmd"
 
 " php.vim
 " This must be put at the end of vimrc
@@ -157,4 +157,16 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+" -----------------------------------------------------------
+" Load specific project configuration file
+" -----------------------------------------------------------
+
+"If there's a .vimlocal file automatically source it
+function! SourceVimLocal()
+    if filereadable(".vimlocal")
+        source .vimlocal
+    endif
+endfunction
+call SourceVimLocal()
 

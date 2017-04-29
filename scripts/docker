@@ -39,8 +39,8 @@ case $answer in
         docker version
 
         # install php tools based on php 5.6
-        pwd
         docker build -f docker/php56-tools/Dockerfile -t php56-tools .
+        docker build -f docker/php71-tools/Dockerfile -t php71-tools .
     ;;
     * )
         echo "Docker not installed"
