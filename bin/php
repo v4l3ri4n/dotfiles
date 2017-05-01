@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# ${@: -1} : output last arg of shell script
-# $@ output all arg
-# for a file in vim, this should give :
-# docker run -i -v /path/to/file.php:/path/to/file.php php56-tools php /path/to/file.php
-
-docker run -i -v "${@: -1}":"${@: -1}" php56-tools php "$@" 
