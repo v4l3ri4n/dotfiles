@@ -125,10 +125,12 @@ map ,, <Esc>
 " Plugins configuration
 " -----------------------------------------------------------
 
-" ack.vim
+" ack.vim _______________________________________
+
 let g:ack_default_options = " -H --nocolor --nogroup --column" " ensure compatibility with ack-grep 1.9
 
-" Syntastic
+" Syntastic _____________________________________
+
 let g:syntastic_check_on_open = 0 " syntastic will run syntax checks when buffers are first loaded and saved
 let g:syntastic_check_on_wq = 0   " skip check on :wq
 let g:syntastic_error_symbol = "🞭"
@@ -136,7 +138,52 @@ let g:syntastic_warning_symbol = "🞳"
 let g:syntastic_style_error_symbol = "🞇"
 let g:syntastic_style_warning_symbol = "🞊"
 
-" php.vim
+" neocomplete ___________________________________
+
+let g:neocomplete#enable_at_startup = 1                  " Use neocomplete
+let g:neocomplete#enable_smart_case = 1                  " Use smartcase
+let g:neocomplete#sources#syntax#min_keyword_length = 3  " Set minimum syntax keyword length
+
+" Define dictionary
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : ''
+    \ }
+
+" Reset sorters
+"call neocomplete#custom#source('_', 'sorters', [])
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Key mappings
+inoremap <silent> <CR> <C-r>=<SID>ClosePopupAndSaveIndent()<CR>
+function! <SID>ClosePopupAndSaveIndent()
+    " return neocomplete#close_popup() . "\<CR>"
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
+
+imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+smap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+inoremap <expr><C-f> neocomplete#start_manual_complete('omni')
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+
+" Omni-Completion tip window to close when a selection is made,
+" these lines close it on movement in insert mode or when leaving insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" php.vim ________________________________________
+
 " Need to be in .vimrc
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
