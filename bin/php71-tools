@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# ${@: 2} : output from second to last arg
+# ${@: -1} : output last arg
+# $@ output all arg
+# for a file in vim, this should give eg. :
+# docker run -i -v /path/to/file.php:/path/to/file.php php71-tools php /path/to/file.php
+
+case "$1" in
+    php )
+        docker run -i -v "${@: -1}":"${@: -1}" php71-tools php "${@: 2}" 
+    ;;
+    phpcs )
+        docker run -i -v "${@: -1}":"${@: -1}" php71-tools phpcs "${@: 2}" 
+    ;;
+    phpmd )
+        docker run -i -v "$2":"$2" php71-tools phpmd "${@: 2}" 
+    ;;
+esac
+

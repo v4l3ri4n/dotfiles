@@ -23,3 +23,15 @@
     stderr: true
     stdin: true
     stdout: true
+  -
+    description: "Installing php"
+    command: "./scripts/php"
+    stderr: true
+    stdin: true
+    stdout: true
+  -
+    description: "Installing docker"
+    command: "./scripts/docker"
+    stderr: true
+    stdin: true
+    stdout: true
