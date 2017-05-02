@@ -122,6 +122,17 @@ imap ,, <Esc>
 map ,, <Esc>
 
 " -----------------------------------------------------------
+" Selection
+" -----------------------------------------------------------
+
+" keep selection in visual mode after a right or left shift
+vnoremap > ><CR>gv
+vnoremap < <<CR>gv
+
+" select last paste in visual mode
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]''`]`'
+
+" -----------------------------------------------------------
 " Plugins configuration
 " -----------------------------------------------------------
 
