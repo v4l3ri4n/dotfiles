@@ -137,6 +137,11 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]''`]`'
 " Plugins configuration
 " -----------------------------------------------------------
 
+" NERDTree ______________________________________
+
+map <leader>n :NERDTreeToggle<CR>
+map <leader>nf :NERDTreeFind<CR>
+
 " ack.vim _______________________________________
 
 let g:ack_default_options = " -H --nocolor --nogroup --column" " ensure compatibility with ack-grep 1.9
