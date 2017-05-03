@@ -7,6 +7,7 @@
 set nocompatible            " Cancel Vi compatibility
 call pathogen#infect()      " Activate pathogen
 autocmd vimenter * NERDTree " Activate NERDTree on start
+autocmd VimEnter * wincmd w " jump to main pane
 
 let mapleader=","              " use comma as leader
 set timeoutlen=500             " lower timeout for leader key
