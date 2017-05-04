@@ -2,5 +2,18 @@
 
 # install vim dependencies
 
+# for ack.vim
 sudo apt-get install ack-grep
+
+# for neocomplete
 sudo apt-get install vim-nox
+
+# for tagbar
+cd ~/dotfiles/universal-ctags
+sudo apt-get install pkg-config
+sudo apt-get install autoconf
+./autogen.sh
+./configure
+make
+sudo make install
+cd ~/dotfiles
