@@ -214,7 +214,7 @@ augroup END
 
 " tagbar _________________________________________
 
-nmap <leade>tb :TagbarToggle<CR>
+nmap <leader>tb :TagbarToggle<CR>
 
 " -----------------------------------------------------------
 " Load specific project configuration file
