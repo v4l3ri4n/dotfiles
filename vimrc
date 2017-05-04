@@ -212,6 +212,10 @@ augroup phpSyntaxOverride
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
+" tagbar _________________________________________
+
+nmap <leade>tb :TagbarToggle<CR>
+
 " -----------------------------------------------------------
 " Load specific project configuration file
 " -----------------------------------------------------------
