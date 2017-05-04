@@ -12,8 +12,9 @@ sudo apt-get install vim-nox
 cd ~/dotfiles/universal-ctags
 sudo apt-get install pkg-config
 sudo apt-get install autoconf
+sudo apt-get install checkinstall
 ./autogen.sh
 ./configure
 make
-sudo make install
+sudo checkinstall
 cd ~/dotfiles
