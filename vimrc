@@ -142,6 +142,10 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]''`]`'
 map <leader>n :NERDTreeToggle<CR>
 map <leader>nf :NERDTreeFind<CR>
 
+" vim-airline ___________________________________
+
+let g:airline#extensions#tagbar#enabled = 0 " remove tag from status line
+
 " ack.vim _______________________________________
 
 let g:ack_default_options = " -H --nocolor --nogroup --column" " ensure compatibility with ack-grep 1.9
@@ -214,7 +218,7 @@ augroup END
 
 " tagbar _________________________________________
 
-nmap <leader>tb :TagbarToggle<CR>
+nmap <leader>t :TagbarToggle<CR>
 
 " -----------------------------------------------------------
 " Load specific project configuration file

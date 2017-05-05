@@ -6,6 +6,7 @@ let g:syntastic_php_checkers = ["php", "phpcs", "phpmd"]
 
 let phptools = "php56-tools"
 let docker_image = system("docker images -q " . phptools)
+let g:syntastic_php_phpcs_args = "--standard=PSR2" " default standard for phpcs
 
 if (executable("php")<1 && strlen(docker_image)>0)
     let g:syntastic_php_php_exec = "~/dotfiles/bin/" . phptools
