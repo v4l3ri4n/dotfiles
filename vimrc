@@ -60,7 +60,7 @@ set wrap                  " Wrap lines
 set scrolloff=3           " Scroll offset around cursor
 
 syntax enable             " Enable syntax color
-set term=screen-256color  " enable colors on term and to be sync with tmux conf
+"set term=screen-256color  " enable colors on term and to be sync with tmux conf
 
 " Enable Solarized theme with dark background
 let g:solarized_termcolors = 256
