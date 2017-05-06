@@ -27,6 +27,7 @@ set smartcase             " If a search pattern contains a uppercase, activate c
 set incsearch             " While typing the pattern, highlight matches
 set hlsearch              " Highlight search matches
 nnoremap <leader><space> :noh<CR> " Turn off search highlight
+nnoremap <leader><space><space> :pclose<CR> " Close preview window
 
 " auto reload the config file after modifications
 autocmd BufWrite $MYVIMRC source $MYVIMRC
@@ -200,8 +201,8 @@ endif
 
 " Omni-Completion tip window to close when a selection is made,
 " these lines close it on movement in insert mode or when leaving insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+" autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " php.vim ________________________________________
 

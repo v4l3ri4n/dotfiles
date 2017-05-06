@@ -17,13 +17,22 @@ CONTENTS
 
    - :wall : Save modified buffers
    - :x : Save buffer only if modified, then exit (better than :wq)
+
+.vimrc :
    - <leader>sv : reload vimrc
    - <leader>ev : edit vimrc
+
+Various shortcuts :
    - <leader><space> : remove search highlight
-   - <leader>c <space> : toggle comment line (nerdcommenter)
-   - <leader>n : toggle nerd tree
-   - <leader>nf : nerd tree find file in tree
-   - <leader>t : toggle tagbar
+   - <leader><space><space> : close preview window
+
+Plugins :
+   - <leader>c <space> : toggle comment line (NERDCommenter)
+   - <leader>n : toggle NERDTree
+   - <leader>nf : NERDTree find file in tree
+   - <leader>t : toggle Tagbar
+   - <TAB> : neocomplete next result
+   - <S-TAB> : neocomplete previous result
 
 ===============================================================================
 2. Visual Mode                                         *myhelp-visual*
