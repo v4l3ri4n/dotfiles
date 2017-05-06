@@ -64,3 +64,9 @@
 [submodule "universal-ctags"]
 	path = universal-ctags
 	url = https://github.com/universal-ctags/ctags.git
+[submodule "vim/bundle/vimproc.vim"]
+	path = vim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "vim/bundle/phpcomplete-extended"]
+	path = vim/bundle/phpcomplete-extended
+	url = https://github.com/m2mdas/phpcomplete-extended.git
