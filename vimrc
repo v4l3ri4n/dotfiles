@@ -1,13 +1,26 @@
 " VIM Configuration
 
+set nocompatible             " Cancel Vi compatibility
+
+" -----------------------------------------------------------
+" Pathogen
+" -----------------------------------------------------------
+
+let g:pathogen_disabled = [] " To disable a plugin, add it's bundle name to the following list
+let s:php_version = substitute(system("php -v | grep -Eo '^PHP ([0-9|\.]){3}' | cut -d ' ' -f 2"), ".", "", "g")
+if (executable("php")<1 || (s:php_version + 0)<54)
+    " disable phpcd if php is not present or below 5.4
+    call add(g:pathogen_disabled, 'phpcd.vim')
+endif
+
+call pathogen#infect()       " Activate pathogen
+
 " -----------------------------------------------------------
 " General
 " -----------------------------------------------------------
 
-set nocompatible            " Cancel Vi compatibility
-call pathogen#infect()      " Activate pathogen
-autocmd vimenter * NERDTree " Activate NERDTree on start
-autocmd VimEnter * wincmd w " jump to main pane
+autocmd vimenter * NERDTree  " Activate NERDTree on start
+autocmd VimEnter * wincmd w  " jump to main pane
 
 let mapleader=","              " use comma as leader
 set timeoutlen=500             " lower timeout for leader key

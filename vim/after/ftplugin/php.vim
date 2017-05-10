@@ -26,3 +26,11 @@ endif
 
 let g:neocomplete#sources#omni#input_patterns.php = '\h\w*\|[^.\t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 
+" phpcd __________________________________________
+
+if !pathogen#is_disabled("phpcd.vim")
+    " Enable phpcd omnicomplete
+    " if phpcd is not disabled (check done in .vimrc)
+    autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
+endif
+
