@@ -1,7 +1,5 @@
 #!/bin/bash
 
-read -p "Do you wish to install PHP 5.6 (y/n)?" answer
-
 function tools {
     wget https://phar.phpunit.de/phploc.phar && \
         chmod +x phploc.phar && \
@@ -37,12 +35,12 @@ function tools {
         sudo mv composer.phar /usr/local/bin/composer
 }
 
+read -p "Do you wish to install PHP 5.6 (y/n)?" answer
 case $answer in
     y|Y )
         sudo add-apt-repository ppa:ondrej/php
         sudo apt-get update
         sudo apt-get install php5.6 php5.6-xml
-        tools
     ;;
     n|N )
         read -p "Do you wish to install PHP 7.0 (y/n)?" answer
@@ -51,12 +49,21 @@ case $answer in
             y|Y )
                 sudo apt-get update
                 sudo apt-get install php7.0 php7.0-xml
-                tools
             ;;
             n|N )
                 echo "PHP not installed"
             ;;
         esac
+    ;;
+esac
+
+read -p "Do you wish to install PHP tools (y/n)?" answer
+case $answer in
+    y|Y )
+        tools
+    ;;
+    n|N )
+        echo "PHP tools not installed"
     ;;
 esac
 
