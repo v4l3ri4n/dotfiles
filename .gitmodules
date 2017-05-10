@@ -28,9 +28,6 @@
 [submodule "vim/bundle/vim-json"]
 	path = vim/bundle/vim-json
 	url = https://github.com/elzr/vim-json
-[submodule "vim/bundle/phpcomplete.vim"]
-	path = vim/bundle/phpcomplete.vim
-	url = git://github.com/shawncplus/phpcomplete.vim.git
 [submodule "vim/bundle/php.vim"]
 	path = vim/bundle/php.vim
 	url = https://github.com/StanAngeloff/php.vim.git
@@ -64,9 +61,3 @@
 [submodule "universal-ctags"]
 	path = universal-ctags
 	url = https://github.com/universal-ctags/ctags.git
-[submodule "vim/bundle/vimproc.vim"]
-	path = vim/bundle/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim.git
-[submodule "vim/bundle/phpcomplete-extended"]
-	path = vim/bundle/phpcomplete-extended
-	url = https://github.com/m2mdas/phpcomplete-extended.git

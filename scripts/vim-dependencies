@@ -8,11 +8,6 @@ sudo apt-get install ack-grep
 # for neocomplete
 sudo apt-get install vim-nox
 
-# for vimproc
-cd ~/dotfiles/vim/bundle/vimproc.vim
-make
-cd ~/dotfiles
-
 # for tagbar
 cd ~/dotfiles/universal-ctags
 sudo apt-get install pkg-config
