@@ -61,3 +61,6 @@
 [submodule "universal-ctags"]
 	path = universal-ctags
 	url = https://github.com/universal-ctags/ctags.git
+[submodule "vim/bundle/phpcd.vim"]
+	path = vim/bundle/phpcd.vim
+	url = https://github.com/lvht/phpcd.vim.git
