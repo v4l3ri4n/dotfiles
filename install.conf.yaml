@@ -18,14 +18,14 @@
     command: "./scripts/powerline-symbols"
     stderr: true
   -
-    description: "Installing vim dependencies"
-    command: "./scripts/vim-dependencies"
+    description: "Installing php"
+    command: "./scripts/php"
     stderr: true
     stdin: true
     stdout: true
   -
-    description: "Installing php"
-    command: "./scripts/php"
+    description: "Installing vim dependencies"
+    command: "./scripts/vim-dependencies"
     stderr: true
     stdin: true
     stdout: true
