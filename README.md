@@ -11,7 +11,8 @@ On Windows, for PuTTY usage, you may need to install modified consolas font:
 https://github.com/nicolalamacchia/powerline-consolas
 
 To use tmux Powerline in PuTTY :
-- Download the patched fonts. I chose DejaVuSansMono as my font since I like it most.
+- Download the patched fonts. I chose DejaVuSansMono.
+https://github.com/powerline/fonts
 - Install this font in Windows to make it accessible for all programs.
 - Open PuTTY and make changes to the settings:
     - Under appearance select the patched font
