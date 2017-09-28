@@ -74,14 +74,30 @@ set wrap                  " Wrap lines
 set scrolloff=3           " Scroll offset around cursor
 
 syntax enable             " Enable syntax color
-"set term=screen-256color  " enable colors on term and to be sync with tmux conf
+set term=screen-256color  " enable colors on term and to be sync with tmux conf
 
 " Enable Solarized theme with dark background
 let g:solarized_termcolors = 256
 set background=dark
 colorscheme solarized
 
-set guifont=DejaVu\ Sans\ Mono\ 10
+"set guifont=DejaVu\ Sans\ Mono\ 10
+if has('gui_win32')
+    " On Vim 7.4.16 the following line still doesn't work with gui_gtk
+    set guifont=Consolas:h11:cANSI,Inconsolata:h12,Courier New:h11
+else " not win32
+    let consolas=system('fc-list | grep -c Consolas')
+    let inconsolata=system('fc-list | grep -c Inconsolata')
+    if (consolas > 0)
+        set guifont=Consolas\ 11
+        elseif (inconsolata > 0)
+        set guifont=Inconsolata\ 12
+    else
+        set guifont=DejaVu\ Sans\ Mono\ 10
+        " or simply
+        " set guifont=Monospace\ 10
+    endif
+endif
 set antialias
 
 " Highlight line and column cursor position

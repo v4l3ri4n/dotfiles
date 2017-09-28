@@ -14,6 +14,10 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   -
+    description: "Installing tmux"
+    command: "./scripts/tmux"
+    stderr: true
+  -
     description: "Installing powerline symbols"
     command: "./scripts/powerline-symbols"
     stderr: true

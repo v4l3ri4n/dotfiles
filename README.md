@@ -7,6 +7,9 @@ it multiple times has no effect.
 
 Dotfiles uses [Dotbot][dotbot] for installation.
 
+On Windows you may need to install modified consolas font:
+https://github.com/nicolalamacchia/powerline-consolas
+
 Configurations files
 --------------------
 

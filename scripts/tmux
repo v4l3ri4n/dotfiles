@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p "Do you wish to install tmux (y/n)?" answer
+case $answer in
+    y|Y )
+        sudo apt-get install tmux -y 
+        echo "alias tmux='TERM=xterm-256color tmux'" >> ~/.bashrc
+    ;;
+    n|N )
+        echo "tmux not installed"
+    ;;
+esac
+
