@@ -81,23 +81,7 @@ let g:solarized_termcolors = 256
 set background=dark
 colorscheme solarized
 
-"set guifont=DejaVu\ Sans\ Mono\ 10
-if has('gui_win32')
-    " On Vim 7.4.16 the following line still doesn't work with gui_gtk
-    set guifont=Consolas:h11:cANSI,Inconsolata:h12,Courier New:h11
-else " not win32
-    let consolas=system('fc-list | grep -c Consolas')
-    let inconsolata=system('fc-list | grep -c Inconsolata')
-    if (consolas > 0)
-        set guifont=Consolas\ 11
-        elseif (inconsolata > 0)
-        set guifont=Inconsolata\ 12
-    else
-        set guifont=DejaVu\ Sans\ Mono\ 10
-        " or simply
-        " set guifont=Monospace\ 10
-    endif
-endif
+set guifont=DejaVu\ Sans\ Mono\ 10
 set antialias
 
 " Highlight line and column cursor position
@@ -184,10 +168,10 @@ let g:ack_default_options = " -H --nocolor --nogroup --column" " ensure compatib
 
 let g:syntastic_check_on_open = 0 " syntastic will run syntax checks when buffers are first loaded and saved
 let g:syntastic_check_on_wq = 0   " skip check on :wq
-let g:syntastic_error_symbol = "🞭"
-let g:syntastic_warning_symbol = "🞳"
-let g:syntastic_style_error_symbol = "🞇"
-let g:syntastic_style_warning_symbol = "🞅 "
+let g:syntastic_error_symbol = "\ue0b0"
+let g:syntastic_warning_symbol = ">"
+let g:syntastic_style_error_symbol = "\ue0b0"
+let g:syntastic_style_warning_symbol = ">"
 
 " neocomplete ___________________________________
 
